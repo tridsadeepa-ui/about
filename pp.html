@@ -1,114 +1,1008 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Resumetridsadee</title>
 
-    <title>Tridsadee | Resume</title>
+<style>
 
-    <link rel="stylesheet" href="style.css">
+/* =========================
+   CUTE MODERN TURQUOISE
+   ========================= */
+
+:root{
+  --bg:#e9fbfc;
+  --bg-soft:#f5feff;
+  --white:#ffffff;
+  --card:#ffffff;
+  --card-soft:#effcfd;
+
+  --primary:#14b8a6;
+  --primary-dark:#0f766e;
+  --cyan:#06b6d4;
+  --cyan-soft:#cffafe;
+
+  --text:#164e63;
+  --text-dark:#134e5e;
+  --muted:#6b8791;
+
+  --border:#c7f1f3;
+  --shadow:rgba(20,184,166,.15);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(103,232,249,.30),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(45,212,191,.20),transparent 25%),
+    radial-gradient(circle at 80% 90%,rgba(103,232,249,.25),transparent 30%),
+    linear-gradient(135deg,#ecfeff,#e6fffc,#f4feff);
+
+  color:var(--text);
+  font-family:"Noto Sans Thai","Segoe UI",sans-serif;
+  line-height:1.65;
+  min-height:100vh;
+}
+
+/* floating cute background */
+
+body:before,
+body:after{
+  content:"";
+  position:fixed;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
+  filter:blur(5px);
+  z-index:-1;
+}
+
+body:before{
+  top:8%;
+  left:-70px;
+}
+
+body:after{
+  bottom:5%;
+  right:-70px;
+}
+
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.wrap{
+  max-width:1050px;
+  margin:40px auto;
+  padding:0 18px;
+}
+
+
+/* =========================
+   MAIN RESUME CARD
+   ========================= */
+
+.resume{
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:32px;
+  overflow:hidden;
+
+  box-shadow:
+    0 25px 70px rgba(15,118,110,.12),
+    0 5px 20px rgba(6,182,212,.08);
+
+  backdrop-filter:blur(15px);
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+  padding:52px 55px 40px;
+
+  background:
+    radial-gradient(circle at 90% 10%,rgba(103,232,249,.35),transparent 28%),
+    radial-gradient(circle at 10% 100%,rgba(45,212,191,.18),transparent 30%),
+    linear-gradient(135deg,#ffffff,#effdfd);
+
+  border-bottom:1px solid var(--border);
+
+  position:relative;
+}
+
+/* little decorative bubble */
+
+header:after{
+  content:"✦";
+  position:absolute;
+  right:35px;
+  bottom:25px;
+  color:#67e8f9;
+  font-size:28px;
+  opacity:.55;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:35px;
+}
+
+
+/* =========================
+   BADGE
+   ========================= */
+
+.badge{
+  display:inline-block;
+
+  border:1px solid #99f6e4;
+  background:
+    linear-gradient(135deg,#ecfeff,#ccfbf1);
+
+  color:var(--primary-dark);
+
+  border-radius:999px;
+
+  padding:7px 15px;
+
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+
+  box-shadow:
+    0 5px 15px rgba(20,184,166,.10);
+}
+
+
+/* =========================
+   NAME
+   ========================= */
+
+h1{
+  font-size:52px;
+  line-height:1;
+
+  margin:18px 0 8px;
+
+  letter-spacing:-.045em;
+
+  color:var(--text-dark);
+
+  font-weight:800;
+}
+
+
+/* =========================
+   ROLE
+   ========================= */
+
+.role{
+  font-size:20px;
+  color:#0891b2;
+  font-weight:600;
+}
+
+
+/* =========================
+   INTRO
+   ========================= */
+
+.intro{
+  max-width:760px;
+
+  color:var(--muted);
+
+  margin:20px 0;
+
+  font-size:14px;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px 18px;
+
+  color:#0e7490;
+
+  font-size:13px;
+}
+
+.contact span{
+  background:#f0fdfa;
+  border:1px solid #ccfbf1;
+
+  padding:5px 9px;
+
+  border-radius:10px;
+}
+
+
+/* =========================
+   MAIN GRID
+   ========================= */
+
+main{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+}
+
+
+/* =========================
+   COLUMNS
+   ========================= */
+
+.left,
+.right{
+  padding:42px 45px;
+}
+
+.left{
+  border-right:1px solid var(--border);
+}
+
+
+/* =========================
+   SECTION
+   ========================= */
+
+section{
+  margin-bottom:36px;
+}
+
+
+/* =========================
+   SECTION TITLE
+   ========================= */
+
+h2{
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:.16em;
+
+  color:var(--primary-dark);
+
+  margin:0 0 19px;
+
+  display:flex;
+
+  gap:12px;
+
+  align-items:center;
+
+  font-weight:800;
+}
+
+h2:before{
+  content:"";
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:linear-gradient(
+    135deg,
+    var(--cyan),
+    var(--primary)
+  );
+
+  box-shadow:
+    0 0 0 5px #ccfbf1;
+}
+
+h2:after{
+  content:"";
+
+  height:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #99f6e4,
+      transparent
+    );
+
+  flex:1;
+
+  border-radius:999px;
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h3{
+  font-size:17px;
+
+  margin:0;
+
+  color:var(--text-dark);
+
+  font-weight:750;
+}
+
+
+/* =========================
+   META
+   ========================= */
+
+.meta{
+  font-size:12px;
+
+  color:#0d9488;
+
+  margin:3px 0 8px;
+
+  font-weight:700;
+
+  letter-spacing:.03em;
+}
+
+
+/* =========================
+   ITEM
+   ========================= */
+
+.item{
+  margin-bottom:25px;
+
+  padding-left:15px;
+
+  border-left:2px solid #ccfbf1;
+}
+
+.item:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================
+   TEXT
+   ========================= */
+
+p,
+li{
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+ul{
+  padding-left:20px;
+  margin-top:8px;
+}
+
+li{
+  margin-bottom:7px;
+}
+
+li::marker{
+  color:var(--primary);
+}
+
+
+/* =========================
+   SKILLS
+   ========================= */
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.skill{
+  padding:7px 12px;
+
+  border:1px solid #bceff0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0fdff,
+      #ecfdf5
+    );
+
+  border-radius:999px;
+
+  font-size:12px;
+
+  color:#0e7490;
+
+  box-shadow:
+    0 4px 12px rgba(20,184,166,.08);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.skill:hover{
+  transform:translateY(-3px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #cffafe,
+      #ccfbf1
+    );
+
+  box-shadow:
+    0 8px 18px rgba(20,184,166,.15);
+}
+
+
+/* =========================
+   PROJECT CARD
+   ========================= */
+
+.project{
+  padding:18px;
+
+  margin-bottom:13px;
+
+  border:1px solid #c7f1f3;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #effcfd
+    );
+
+  border-radius:19px;
+
+  box-shadow:
+    0 5px 16px rgba(6,182,212,.07);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.project:hover{
+  transform:translateY(-3px);
+
+  border-color:#99f6e4;
+
+  box-shadow:
+    0 12px 25px rgba(20,184,166,.13);
+}
+
+.project p{
+  margin-bottom:0;
+}
+
+
+/* =========================
+   PROFILE HIGHLIGHT
+   ========================= */
+
+.highlight{
+  position:relative;
+
+  border-left:4px solid var(--primary);
+
+  background:
+    linear-gradient(
+      90deg,
+      #ccfbf1,
+      #ecfeff
+    );
+
+  padding:14px 17px;
+
+  border-radius:0 17px 17px 0;
+
+  box-shadow:
+    0 5px 15px rgba(20,184,166,.08);
+}
+
+.highlight:after{
+  content:"♡";
+
+  position:absolute;
+
+  right:14px;
+  top:8px;
+
+  font-size:22px;
+
+  color:#2dd4bf;
+
+  opacity:.55;
+}
+
+
+/* =========================
+   STATS
+   ========================= */
+
+.stats{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+}
+
+.stats div{
+  background:
+    linear-gradient(
+      135deg,
+      #effcff,
+      #ecfdf5
+    );
+
+  border:1px solid #c7f1f3;
+
+  border-radius:17px;
+
+  padding:14px;
+
+  box-shadow:
+    0 5px 14px rgba(20,184,166,.07);
+
+  transition:
+    transform .2s ease;
+}
+
+.stats div:hover{
+  transform:translateY(-3px);
+}
+
+.stats b{
+  display:block;
+
+  font-size:23px;
+
+  color:#0891b2;
+}
+
+.stats small{
+  color:var(--muted);
+
+  font-size:11px;
+}
+
+
+/* =========================
+   PROFILE PHOTO
+   ========================= */
+
+.profile-photo{
+  width:155px;
+  height:155px;
+
+  object-fit:cover;
+
+  border-radius:30px;
+
+  border:4px solid #ffffff;
+
+  outline:2px solid #99f6e4;
+
+  box-shadow:
+    0 12px 30px rgba(6,182,212,.18);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.profile-photo:hover{
+  transform:
+    translateY(-4px)
+    rotate(1deg);
+
+  box-shadow:
+    0 18px 35px rgba(20,184,166,.23);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+  text-align:center;
+
+  padding:20px;
+
+  border-top:1px solid var(--border);
+
+  color:#70a8b0;
+
+  font-size:11px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f0fdff,
+      #f0fdfa
+    );
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:800px){
+
+  .wrap{
+    margin:12px auto;
+  }
+
+  .resume{
+    border-radius:24px;
+  }
+
+  header{
+    padding:35px 25px;
+  }
+
+  h1{
+    font-size:40px;
+  }
+
+  main{
+    grid-template-columns:1fr;
+  }
+
+  .left{
+    border-right:0;
+    border-bottom:1px solid var(--border);
+  }
+
+  .left,
+  .right{
+    padding:30px 25px;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .hero-row{
+    align-items:flex-start;
+  }
+
+  .profile-photo{
+    width:105px;
+    height:105px;
+
+    border-radius:22px;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  .role{
+    font-size:16px;
+  }
+
+  .contact{
+    gap:7px;
+  }
+
+  .contact span{
+    font-size:11px;
+  }
+}
+
+
+/* =========================
+   PRINT
+   ========================= */
+
+@media print{
+
+  body{
+    background:white;
+  }
+
+  .resume{
+    box-shadow:none;
+    border:0;
+  }
+
+  header,
+  .left,
+  .right{
+    background:white;
+  }
+
+  h1,
+  h3{
+    color:#111;
+  }
+
+  p,
+  li,
+  .intro{
+    color:#444;
+  }
+
+  .profile-photo{
+    border:1px solid #ddd;
+    outline:none;
+    box-shadow:none;
+  }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <div class="resume">
+<div class="wrap">
+<div class="resume">
 
-        <!-- Profile -->
-        <header>
-            <img src="profile (2).jpg" alt="Profile">
+<header>
 
-            <div>
-                <h1>Apiwat Phaengnoi</h1>
-                <h2>Information Technology Student</h2>
+<div class="hero-row">
 
-                <p>
-                    นักศึกษาเทคโนโลยีสารสนเทศ
-                    สนใจด้าน IT 
-                </p>
-            </div>
-        </header>
+<div>
 
+<span class="badge">DIGITAL BUSINESS × SOFTWARE</span>
 
-        <!-- About -->
-        <section>
-            <h3>👤 About Me</h3>
+<h1>Tridsaddee Pangthai</h1>
 
-            <p>
-                ผมเป็นนักศึกษาสาขาเทคโนโลยีสารสนเทศ
-                มีความสนใจด้านคอมพิวเตอร์ ระบบเครือข่าย
-                การพัฒนาเว็บไซต์และติดตั้งอุปกรณ์ต่างๆเกี่ยวกับIT 
-            </p>
-        </section>
+<div class="role">
+Digital Business Administration Student
+</div>
 
+</div>
 
-        <!-- Education -->
-        <section>
-            <h3>🎓 Education</h3>
+<img class="profile-photo" src="DreamXD.jpg" alt="Profile Photo">
 
-            <div class="item">
-                <h4>มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน</h4>
-                <p>
-                    สาขาเทคโนโลยีสารสนเทศ
-                </p>
-            </div>
+</div>
 
-            <div class="item">
-                <h4>วิทยาลัยเทคนิคขอนแก่น</h4>
-                <p>
-                    ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)
-                </p>
-            </div>
-        </section>
+<p class="intro">นักศึกษาปริญญาตรี สาขาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีธุรกิจดิจทัล มีพื้นฐานด้านการโมเดล3D  สนใจการผสมผสานเทคโนโลยี ธุรกิจ และการออกแบบประสบการณ์ผู้ใช้ ชอบเปลี่ยนไอเดียให้กลายเป็นโปรเจกต์ที่ใช้งานได้จริง</p>
 
+<div class="contact">
+<span>📍 Thailand</span>
+<span>📧 Tridsadee.pa@rmuti.ac.th </span>
+<span>📱 0826212940 </span>
+<span>💻 https://github.com/tridsadeepa-ui </span>
+<span>🔗 YOUR_PORTFOLIO</span>
+</div>
 
-        <!-- Experience -->
-        <section>
-            <h3>💼 Experience</h3>
+</header>
 
-            <div class="item">
-                <h4>IT Support Intern</h4>
+<main>
 
-                <p>
-                    บริษัท Banana
-                </p>
+<div class="left">
 
-                <ul>
-                    <li>ติดตั้งและแก้ไขปัญหา Windows</li>
-                    <li>ซ่อมและตรวจสอบคอมพิวเตอร์</li>
-                    <li>ดูแลระบบ Network</li>
-                    <li>ใช้งาน Microsoft 365</li>
-                    <li>จัดการ Active Directory</li>
-                </ul>
-            </div>
-        </section>
+<section>
 
+<h2>Profile</h2>
 
-        <!-- Skills -->
-        <section>
-            <h3>🛠 Skills</h3>
+<div class="highlight">
 
-            <div class="skills">
-                <span>Microsoft Office</span>
-                <span>Microsoft 365</span>
-                <span>Windows 10/11</span>
-                <span>LAN / WAN</span>
-                <span>MySQL</span>
-                <span>HTML / CSS</span>
-                <span>Git / GitHub</span>
-            </div>
-        </section>
+<p>มีทั้งมุมธุรกิจดิจิทัลและพื้นฐาน Software Development ชอบคิดเป็นระบบ แก้ปัญหา และลงมือทำจริง พร้อมเรียนรู้เทคโนโลยีใหม่และทำงานร่วมกับผู้อื่น</p>
 
+</div>
 
-        <!-- Contact -->
-        <section>
-            <h3>📞 Contact</h3>
+</section>
 
-            <p>📧 Email: apiwat.ph@rmuti.ac.th</p>
-            <p>📱 Phone: 098-xxx-xxxx</p>
-            <p>📍 Khon Kaen, Thailand</p>
-        </section>
+<section>
 
-    </div>
+<h2>Education</h2>
+
+<div class="item">
+
+<h3>Bachelor's Degree — Digital Business Administration</h3>
+
+<div class="meta">
+UNIVERSITY • PRESENT
+</div>
+
+<p>ศึกษาด้านธุรกิจดิจิทัล เทคโนโลยี การจัดการ และการประยุกต์ใช้ระบบดิจิทัล</p>
+
+</div>
+
+<div class="item">
+
+<h3>Vocational — Computer Software Development</h3>
+
+<div class="meta">
+ปวส. • COMPLETED
+</div>
+
+<p>พื้นฐานการพัฒนาซอฟต์แวร์ การเขียนโปรแกรม และการทำโปรเจกต์คอมพิวเตอร์</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Projects</h2>
+
+<div class="project">
+
+<h3>Software Development Projects</h3>
+
+<div class="meta">
+ACADEMIC PROJECTS
+</div>
+
+<p>พัฒนาโปรเจกต์ซอฟต์แวร์ตั้งแต่การออกแบบแนวคิด พัฒนา ทดสอบ และนำเสนอผลงาน</p>
+
+</div>
+
+<div class="project">
+
+<h3>Digital Business / System Projects</h3>
+
+<div class="meta">
+BUSINESS × TECHNOLOGY
+</div>
+
+<p>สนใจระบบที่ช่วยแก้ปัญหาจริง เช่น ระบบบริการ ระบบอัตโนมัติ และการลดขั้นตอนการทำงาน</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Strengths</h2>
+
+<ul>
+
+<li>คิดวิเคราะห์และมองภาพรวมของปัญหา</li>
+
+<li>เรียนรู้เครื่องมือและเทคโนโลยีใหม่</li>
+
+<li>มีพื้นฐานทั้ง Software Development และ Digital Business</li>
+
+<li>ชอบลงมือทำและแก้ปัญหาเฉพาะหน้า</li>
+
+<li>ทำงานร่วมกับทีมได้</li>
+
+</ul>
+
+</section>
+
+</div>
+
+<aside class="right">
+
+<section>
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<span class="skill">Python</span> <span class="skill">HTML</span> <span class="skill">CSS</span> <span class="skill">JavaScript</span> <span class="skill">Roblox Studio</span> <span class="skill">Software Development</span> <span class="skill">Digital Business</span> <span class="skill">System Analysis</span> <span class="skill">Problem Solving</span> <span class="skill">Teamwork</span>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Experience</h2>
+
+<div class="item">
+
+<h3>Academic Project Work</h3>
+
+<div class="meta">
+SOFTWARE / DIGITAL BUSINESS
+</div>
+
+<p>ทำงานโปรเจกต์ตั้งแต่คิดไอเดีย ออกแบบระบบ พัฒนา ทดสอบ และนำเสนอ</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Highlights</h2>
+
+<div class="stats">
+
+<div>
+<b>2</b>
+<small>Business + Software</small>
+</div>
+
+<div>
+<b>∞</b>
+<small>Curiosity & Learning</small>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Interests</h2>
+
+<div class="skills">
+
+<span class="skill">🏙️ Grapphic Design</span> <span class="skill">🩵 I like some one "AA"</span> <span class="skill">🎵 Music</span> <span class="skill">🎬 Anime</span> <span class="skill">🐱 Model 3D</span>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Languages</h2>
+
+<div class="item">
+
+<h3>Thai</h3>
+
+<div class="meta">
+NATIVE
+</div>
+
+</div>
+
+<div class="item">
+
+<h3>English</h3>
+
+<div class="meta">
+YOUR LEVEL
+</div>
+
+</div>
+
+</section>
+
+</aside>
+
+</main>
+
+<footer>
+Resume • Tridsadee Pangthai • Digital Business Administration
+</footer>
+
+</div>
+</div>
 
 </body>
 </html>
